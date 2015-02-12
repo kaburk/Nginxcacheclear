@@ -10,3 +10,6 @@
 **Version 1.2.0** - setting.phpの追加。  
 **Version 1.1.1** - バグ修正    
 **Version 1.1.0** - 公開  
+
+### ライセンス ###
+baserCMS と同じ MIT lincense
