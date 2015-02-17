@@ -8,7 +8,7 @@
     * @copyright		Copyright 2015, Studio Necomaneki
     * @link			    http://blog.necomaneki.com/ Studio Necomaneki
     * @package			NginxCacheClear.Controller
-    * @since			  v 1.2.1
+    * @since			  v 1.2.2
     * @license      MIT lincense
     *
     */
@@ -33,6 +33,7 @@ class NginxcacheclearController extends BcPluginAppController {
 
     $files = $folder->read(true, true, true, true, true);
     foreach ($files[1] as $file) {
+      // Cache Delete
       @unlink($file);
     }
     $Folder = new Folder();

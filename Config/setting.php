@@ -7,9 +7,9 @@
   *
   * @copyright		Copyright 2015, Studio Necomaneki
   * @link			    http://blog.necomaneki.com/ Studio Necomaneki
-  * @since			  v 1.2.1
+  * @since			  v 1.2.2
   * @license      MIT lincense
   *
   */
 // Nginx Cache Directory, Default: proxy
-$config = array('Nginxcacheclear' => array('Cachedir'	=> 'proxy'));
+$config = array('Nginxcacheclear' => array('Cachedir'	=> 'frontend'));
