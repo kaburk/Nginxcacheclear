@@ -12,4 +12,4 @@
   *
   */
 // Nginx Cache Directory, Default: proxy
-$config = array('Nginxcacheclear' => array('Cachedir'	=> 'frontend'));
+$config = array('Nginxcacheclear' => array('Cachedir'	=> 'proxy'));
