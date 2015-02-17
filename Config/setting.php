@@ -7,9 +7,10 @@
   *
   * @copyright		Copyright 2015, Studio Necomaneki
   * @link			    http://blog.necomaneki.com/ Studio Necomaneki
-  * @since			  v 1.2.2
+  * @since			  v 1.3.0
   * @license      MIT lincense
   *
   */
-// Nginx Cache Directory, Default: proxy
-$config = array('Nginxcacheclear' => array('Cachedir'	=> 'proxy'));
+// Nginx Default Cache Directory: /etc/nginx/nginx.conf
+
+$config = array('Nginxcacheclear' => array('Cachedir'	=> '/var/www/cache'));

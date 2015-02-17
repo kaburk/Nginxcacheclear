@@ -8,7 +8,7 @@
     * @copyright		Copyright 2015, Studio Necomaneki
     * @link			    http://blog.necomaneki.com/ Studio Necomaneki
     * @package			NginxCacheClear.Controller
-    * @since			  v 1.2.2
+    * @since			  v 1.3.0
     * @license      MIT lincense
     *
     */
@@ -27,9 +27,10 @@ class NginxcacheclearController extends BcPluginAppController {
 
 // Admin Page Action
   public function admin_index() {
+    $this->autoRender = false;
 
     App::import('Core', 'Folder');
-    $folder = new Folder(CACHE . Configure::read('Nginxcacheclear.Cachedir') . DS);
+    $folder = new Folder(Configure::read('Nginxcacheclear.Cachedir') . DS);
 
     $files = $folder->read(true, true, true, true, true);
     foreach ($files[1] as $file) {

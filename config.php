@@ -8,7 +8,7 @@
   * @copyright		Copyright 2015, Studio Necomaneki
   * @link			    http://blog.necomaneki.com/ Studio Necomaneki
   * @package		  NginxCacheClear.config
-  * @since			  v 1.2.2
+  * @since			  v 1.3.0
   * @license      MIT lincense
   *
   */
