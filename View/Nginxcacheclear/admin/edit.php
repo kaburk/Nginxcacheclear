@@ -15,6 +15,9 @@
 <?php echo $this->bcForm->create('Nginxcacheclear'); ?>
 <table>
   <tr>
+    <td>※ nginx.conf ( proxy_cache_pass ~ ) に記述されているキャッシュディレクトリを指定して下さい。</td>
+  </tr>
+  <tr>
     <td><?php echo $this->bcForm->text('Nginxcacheclear.cachedir'); ?></td>
   </tr>
 </table>
