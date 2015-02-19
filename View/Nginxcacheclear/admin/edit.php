@@ -18,9 +18,6 @@
   <tr>
     <td><?php echo $this->bcForm->text('Nginxcacheclear.cachedir'); ?></td>
   </tr>
-  <tr>
-    <td><?php echo $this->bcForm->error('Nginxcacheclear.cachedir'); ?></td>
-  </tr>
 </table>
 <div class="submit">
   <?php echo $this->bcForm->submit('保存',array('class'=>'button')); ?>
