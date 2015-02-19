@@ -19,5 +19,7 @@ class Nginxcacheclear extends BcPluginAppModel {
   public $plugin = 'Nginxcacheclear';
   //Plugin DbConfig
   public $useDbConfig = 'plugin';
+  //Plugin Validate
+  public $validate = array('cachedir'=>array('rule'=>'isUnique','required'=>true,'message'=>'入力しないとキャッシュ削除ができません。'));
 }
 ?>
