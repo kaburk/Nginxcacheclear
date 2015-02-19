@@ -7,10 +7,11 @@
   *
   * @copyright		Copyright 2015, Studio Necomaneki
   * @link			    http://blog.necomaneki.com/ Studio Necomaneki
-  * @since			  v 1.4.0
+  * @since			  v 1.5.0
   * @license      MIT lincense
   *
   */
-// Nginx Default Cache Directory: /etc/nginx/nginx.conf
 
-$config = array('Nginxcacheclear' => array('Cachedir'	=> '/var/www/cache'));
+$this->Plugin->initDb('{Nginxcacheclear}');
+
+?>

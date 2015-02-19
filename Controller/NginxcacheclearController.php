@@ -8,7 +8,7 @@
     * @copyright		Copyright 2015, Studio Necomaneki
     * @link			    http://blog.necomaneki.com/ Studio Necomaneki
     * @package			NginxCacheClear.Controller
-    * @since			  v 1.4.0
+    * @since			  v 1.5.0
     * @license      MIT lincense
     *
     */
@@ -25,19 +25,33 @@ class NginxcacheclearController extends BcPluginAppController {
 // Component
   public $components = array('BcAuth', 'Cookie', 'BcAuthConfigure');
 
-// uses Property
-  public $uses = array('Nginxcacheclear.Nginxcacheclear');
-
 // Admin Page Action
   public function admin_index() {
-    //$this->autoRender = false;
-    $cachedir = $this->Nginxcacheclear->findByCachedir($this->request->data('Nginxcacheclear.cachedir'));
+    $cachedir = $this->Nginxcacheclear->find('all');
     $this->set('cachedir',$cachedir);
-/*
+  }
+
+  public function admin_edit() {
+    if (!$this->data) {
+      $this->Nginxcacheclear->create();
+      $this->data = $this->Nginxcacheclear->find('first');
+    } else {
+      $this->Nginxcacheclear->set($this->data);
+      if ($this->Nginxcacheclear->id = 1) {
+	$this->Nginxcacheclear->save($this->data);
+        $this->Session->setFlash('保存しました。');
+        $this->redirect(array('plugin'=>'nginxcacheclear', 'controller'=>'nginxcacheclear', 'action'=>'index'));
+      } else {
+        $this->Session->setFlash('保存できませんでした。');
+      }
+    }
+  }
+
+  public function admin_clear() {
     App::import('Core', 'Folder');
-    $folder = new Folder(Configure::read('Nginxcacheclear.Cachedir') . DS);
-    //$folder = new Folder($Cachedir . DS)
-    $files = $folder->read(true, true, true, true, true);
+    $ngxcache = $this->Nginxcacheclear->find('first');
+    $folder = new Folder($ngxcache['Nginxcacheclear']['cachedir'] . DS );
+    $files = $folder->read(true, true, true);
     foreach ($files[1] as $file) {
       // Cache Delete
       @unlink($file);
@@ -46,24 +60,8 @@ class NginxcacheclearController extends BcPluginAppController {
     foreach ($files[0] as $folder) {
       $Folder->delete($folder);
     }
-
     $this->setMessage('Nginxキャッシュを削除しました。');
     $this->redirect($this->referer());
-*/
-  }
-
-  public function admin_edit() {
-    if (!$this->data) {
-      $this->data = $this->Nginxcacheclear->find('first');
-    } else {
-      $this->Nginxcacheclear->set($this->data);
-      if ($this->Nginxcacheclear->save()) {
-        $this->Session->setFlash('保存しました。');
-        $this->redirect(array('plugin'=>'nginxcacheclear', 'controller'=>'nginxcacheclear', 'action'=>'index'));
-      } else {
-        $this->Session->setFlash('保存できませんでした。');
-      }
-    }
   }
 
 }

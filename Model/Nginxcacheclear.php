@@ -7,7 +7,7 @@
   *
   * @copyright		Copyright 2015, Studio Necomaneki
   * @link			    http://blog.necomaneki.com/ Studio Necomaneki
-  * @since			  v 1.4.0
+  * @since			  v 1.5.0
   * @license      MIT lincense
   *
   */
@@ -17,7 +17,7 @@ class Nginxcacheclear extends BcPluginAppModel {
   public $name = 'Nginxcacheclear';
   //Plugin Name
   public $plugin = 'Nginxcacheclear';
-  //Database
+  //Plugin DbConfig
   public $useDbConfig = 'plugin';
 }
 ?>

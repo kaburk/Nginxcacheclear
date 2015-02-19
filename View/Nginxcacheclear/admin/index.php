@@ -7,13 +7,14 @@
     *
     * @copyright		Copyright 2015, Studio Necomaneki
     * @link			    http://blog.necomaneki.com/ Studio Necomaneki
-    * @since			  v 1.4.0
+    * @since			  v 1.5.0
     * @license      MIT lincense
     *
     */
 ?>
 <strong>Nginxcacheclear</strong><br />
-<?php foreach($cachedir[1] as $datas): ?>
-<p><?php echo $datas; ?></p>
-<?php endforeach; ?>
-<?php echo $this->bcBaser->link('キャッシュディレクトリ名の変更', array('controller'=>'nginxcacheclear', 'action'=>'edit')); ?>
+<?php if(!empty($cachedir)): ?>
+<p><?php echo $cachedir[0]['Nginxcacheclear']['cachedir']; ?></p>
+<?php endif; ?>
+<p><?php echo $this->bcBaser->link('キャッシュディレクトリ名の変更', array('controller'=>'nginxcacheclear', 'action'=>'edit')); ?></p>
+<p><?php echo $this->bcBaser->link('Nginxキャッシュ削除', array('controller'=>'nginxcacheclear', 'action'=>'clear')); ?></p>

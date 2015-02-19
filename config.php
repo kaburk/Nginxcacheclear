@@ -8,13 +8,13 @@
   * @copyright		Copyright 2015, Studio Necomaneki
   * @link			    http://blog.necomaneki.com/ Studio Necomaneki
   * @package		  NginxCacheClear.config
-  * @since			  v 1.4.0
+  * @since			  v 1.5.0
   * @license      MIT lincense
   *
   */
 
-$title = 'Nginxキャッシュクリア';
-$description = 'nginx.confに記述されたキャッシュディレクトリ内の削除。※ディレクトリ名の変更は /Config/setting.php を編集して下さい。';
+$title = 'NginxCacheClear';
+$description = 'nginx.conf ( proxy_cache_path ~ ) に記述されたディレクトリ内のキャッシュ削除。';
 $adminLink = array('plugin' => 'nginxcacheclear', 'controller' => 'nginxcacheclear', 'action' => 'index');
 $installMessage = 'NginxCacheClearをインストールしますか？';
 $author = 'hisanuco';
