@@ -16,7 +16,7 @@
 <?php echo $this->bcForm->create('Nginxcacheclear'); ?>
 <table>
   <tr>
-    <td><?php echo $this->bcForm->text('Nginxcacheclear.Cachedir'); ?></td>
+    <td><?php echo $this->bcForm->text('Nginxcacheclear.cachedir'); ?></td>
   </tr>
 </table>
 <div class="submit">
