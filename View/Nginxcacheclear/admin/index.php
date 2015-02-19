@@ -13,7 +13,7 @@
     */
 ?>
 <strong>Nginxcacheclear</strong><br />
-<?php foreach($cachedir[1] as $datas)): ?>
+<?php foreach($cachedir[1] as $datas): ?>
 <p><?php echo $datas; ?></p>
 <?php endforeach; ?>
 <?php echo $this->bcBaser->link('キャッシュディレクトリ名の変更', array('controller'=>'nginxcacheclear', 'action'=>'edit')); ?>
