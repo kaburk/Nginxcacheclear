@@ -47,7 +47,7 @@ class NginxcacheclearController extends BcPluginAppController {
         $this->Session->setFlash('保存できませんでした。');
       }
       $this->pageTitle = 'キャッシュディレクトリ変更及び、キャッシュ削除';
-      $this->render('index');
+      $this->render('edit');
     }
   }
 
