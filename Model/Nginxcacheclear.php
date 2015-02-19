@@ -11,6 +11,13 @@
   * @license      MIT lincense
   *
   */
-// Nginx Default Cache Directory: /etc/nginx/nginx.conf
-
-$config = array('Nginxcacheclear' => array('Cachedir'	=> '/var/www/cache'));
+App::import('Model','BcPluginAppModel');
+class Nginxcacheclear extends BcPluginAppModel {
+  //Model Name
+  public $name = 'Nginxcacheclear';
+  //Plugin Name
+  public $plugin = 'Nginxcacheclear';
+  //Database
+  public $useDbConfig = 'plugin';
+}
+?>

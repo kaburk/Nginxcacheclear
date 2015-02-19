@@ -12,8 +12,14 @@
     *
     */
 ?>
-<strong>Nginxcacheclear</strong><br />
-<?php if (!empty($Cachedir)): ?>
-  <?php echo $Cachedir[0]['Nginxcacheclear']['Cachedir'] ?>
-<?php endif; ?>
-<?php echo $this->bcBaser->link('キャッシュディレクトリ名の変更', array('controller'=>'nginxcacheclear', 'action'=>'edit')); ?>
+<strong>Nginxcacheclear Edit Directory.</strong><br />
+<?php echo $this->bcForm->create('Nginxcacheclear'); ?>
+<table>
+  <tr>
+    <td><?php echo $this->bcForm->text('Nginxcacheclear.Cachedir'); ?></td>
+  </tr>
+</table>
+<div class="submit">
+  <?php echo $this->bcForm->submit('保存',array('class'=>'button')); ?>
+</div>
+<?php echo $this->bcForm->end(); ?>
