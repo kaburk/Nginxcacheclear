@@ -30,10 +30,7 @@ class NginxcacheclearController extends BcPluginAppController {
   public function beforeFilter() {
     parent::beforeFilter();
 
-    if (!preg_match('/^admin_/', $this->action)) {
-      // フロント側のindexアクションの際は認証しないようにする
-      $this->BcAuth->allow('index');
-     } else {
+    if (preg_match('/^admin_/', $this->action)) {
       // ファイル名を指定して、サブメニューに設定する
       $this->subMenuElements = array('nginxcacheclear');
     }
