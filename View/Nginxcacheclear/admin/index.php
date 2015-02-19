@@ -17,4 +17,5 @@
   echo $this->bcForm->create('Nginxcacheclear');
   echo $this->bcForm->text('cachedir');
   echo $this->bcForm->submit('キャッシュディレクトリ名の変更');
+  echo $this->bcForm->end();
 ?>
