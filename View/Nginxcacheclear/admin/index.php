@@ -14,6 +14,6 @@
 ?>
 <?php if(!empty($cachedir)): ?>
 <div class="panel-box">
-  <h5>Nginxキャッシュディレクトリ: <?php echo $cachedir[0]['Nginxcacheclear']['cachedir']; ?></h5>
+  <h5>Nginxキャッシュディレクトリ: [ <?php echo $cachedir[0]['Nginxcacheclear']['cachedir']; ?> ]</h5>
 </div>
 <?php endif; ?>

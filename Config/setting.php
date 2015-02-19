@@ -11,3 +11,10 @@
   * @license      MIT lincense
   *
   */
+  $config['BcApp.adminNavi.nginxcacheclear'] = array(
+    'name' => 'NginxCacheClearプラグイン',
+    'contents' => array(
+      array('name' => 'キャッシュディレクトリ名の変更', 'url' => array('admin' => true, 'plugin' => 'nginxcacheclear', 'controller' => 'nginxcacheclear', 'action' => 'edit')),
+      array('name' => 'Nginxキャッシュ削除', 'url' => array('admin' => true, 'plugin' => 'nginxcacheclear', 'controller' => 'nginxcacheclear', 'action' => 'clear')),
+    )
+  );
