@@ -13,7 +13,5 @@
     */
 ?>
 <?php if(!empty($cachedir)): ?>
-<p><?php echo $cachedir[0]['Nginxcacheclear']['cachedir']; ?></p>
+<div class="panel-box"><?php echo $cachedir[0]['Nginxcacheclear']['cachedir']; ?></div>
 <?php endif; ?>
-<p><?php echo $this->bcBaser->link('キャッシュディレクトリ名の変更', array('controller'=>'nginxcacheclear', 'action'=>'edit')); ?></p>
-<p><?php echo $this->bcBaser->link('Nginxキャッシュ削除', array('controller'=>'nginxcacheclear', 'action'=>'clear')); ?></p>

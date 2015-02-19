@@ -25,6 +25,18 @@ class NginxcacheclearController extends BcPluginAppController {
 // Component
   public $components = array('BcAuth', 'Cookie', 'BcAuthConfigure');
 
+
+// SubMenu
+  public function beforeFilter() {
+    parent::beforeFilter();
+
+    if (preg_match('/^admin_/', $this->action)) {
+      // ファイル名を指定して、サブメニューに設定する
+      $this->subMenuElements = array('nginxcacheclear');
+    }
+
+  }
+
 // Admin Page Action
   public function admin_index() {
     $cachedir = $this->Nginxcacheclear->find('all');
@@ -48,7 +60,7 @@ class NginxcacheclearController extends BcPluginAppController {
       }
     }
     $this->pageTitle = 'キャッシュディレクトリ変更及び、キャッシュ削除';
-    $this->render('edit');  
+    $this->render('edit');
   }
 
   public function admin_clear() {
