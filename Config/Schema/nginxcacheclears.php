@@ -1,4 +1,7 @@
-<?php 
+<?php
+
+/* Nginx Cache Clear Plugin Schema. */
+
 class NginxcacheclearsSchema extends CakeSchema {
 
 	public $file = 'nginxcacheclears.php';
