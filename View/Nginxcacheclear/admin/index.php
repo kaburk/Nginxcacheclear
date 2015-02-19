@@ -13,7 +13,7 @@
     */
 ?>
 <strong>Nginxcacheclear</strong><br />
-<?php if (!isset($cachedir)): ?>
+<?php if (empty($cachedir)): ?>
 <?php echo $cachedir[0]['Nginxcacheclear']['cachedir']; ?>
 <?php endif; ?>
 <?php echo $this->bcBaser->link('キャッシュディレクトリ名の変更', array('controller'=>'nginxcacheclear', 'action'=>'edit')); ?>
