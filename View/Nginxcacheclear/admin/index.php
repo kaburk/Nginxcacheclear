@@ -13,5 +13,5 @@
     */
 ?>
 <?php if(!empty($cachedir)): ?>
-<div ="panel-box"><?php echo $cachedir[0]['Nginxcacheclear']['cachedir']; ?></div>
+<div class="panel-box"><?php echo $cachedir[0]['Nginxcacheclear']['cachedir']; ?></div>
 <?php endif; ?>
