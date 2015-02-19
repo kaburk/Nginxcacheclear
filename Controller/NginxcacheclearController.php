@@ -36,7 +36,7 @@ class NginxcacheclearController extends BcPluginAppController {
 
     App::import('Core', 'Folder');
     //$folder = new Folder(Configure::read('Nginxcacheclear.Cachedir') . DS);
-    $folder = new Folder($this->Cachedir . DS)
+    $folder = new Folder($Cachedir . DS)
     $files = $folder->read(true, true, true, true, true);
     foreach ($files[1] as $file) {
       // Cache Delete
