@@ -31,9 +31,9 @@ class NginxcacheclearController extends BcPluginAppController {
 // Admin Page Action
   public function admin_index() {
     $this->autoRender = false;
-    $Cachedir = $this->Nginxcacheclear->find('all');
+    $Cachedir = $this->Nginxcacheclear->find('first');
     $this->set('Cachedir',$Cachedir);
-
+/*
     App::import('Core', 'Folder');
     $folder = new Folder(Configure::read('Nginxcacheclear.Cachedir') . DS);
     //$folder = new Folder($Cachedir . DS)
@@ -51,7 +51,7 @@ class NginxcacheclearController extends BcPluginAppController {
     $this->redirect($this->referer());
 
   }
-
+*/
   public function admin_edit() {
     if (!$this->data) {
       $this->data = $this->Nginxcacheclear->find('first');
