@@ -12,6 +12,6 @@
   *
   */
 
-$this->Plugin->initDb('{Nginxcacheclear}');
+$this->Plugin->initDb('{nginxcacheclear}');
 
 ?>
