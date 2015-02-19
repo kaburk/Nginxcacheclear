@@ -12,7 +12,6 @@
     *
     */
 ?>
-<strong>Nginxcacheclear</strong><br />
 <?php if(!empty($cachedir)): ?>
 <p><?php echo $cachedir[0]['Nginxcacheclear']['cachedir']; ?></p>
 <?php endif; ?>

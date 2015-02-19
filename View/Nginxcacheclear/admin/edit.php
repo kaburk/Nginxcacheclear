@@ -12,7 +12,6 @@
     *
     */
 ?>
-<strong>Nginxcacheclear Edit Directory.</strong><br />
 <?php echo $this->bcForm->create('Nginxcacheclear'); ?>
 <table>
   <tr>
