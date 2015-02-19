@@ -8,7 +8,7 @@
     * @copyright		Copyright 2015, Studio Necomaneki
     * @link			    http://blog.necomaneki.com/ Studio Necomaneki
     * @package			NginxCacheClear.Controller
-    * @since			  v 1.6.0
+    * @since			  v 1.6.2
     * @license      MIT lincense
     *
     */
@@ -35,6 +35,14 @@ class NginxcacheclearController extends BcPluginAppController {
             // Submenu
             $this->subMenuElements = array('nginxcacheclear');
         }
+        // Model Search - CachePath
+        $defcachedir = $this->Nginxcacheclear->find('first');
+        // Data Null
+        if (!$defcachedir) {
+            $this->Nginxcacheclear->read(null, 1);
+            $this->Nginxcacheclear->set('cachedir', '/var/cache/nginx');
+            $this->Nginxcacheclear->save();
+        }
 
     }
 
@@ -50,8 +58,6 @@ class NginxcacheclearController extends BcPluginAppController {
     public function admin_edit() {
     // not database.
         if (!$this->data) {
-            // Null
-            $this->Nginxcacheclear->create();
             // Data Search
             $this->data = $this->Nginxcacheclear->find('first');
         } else {
@@ -78,25 +84,20 @@ class NginxcacheclearController extends BcPluginAppController {
 // Admin Nginx Cache Clear Action
     public function admin_clear() {
         App::import('Core', 'Folder');
-
         // Model Search - CachePath
         $ngxcache = $this->Nginxcacheclear->find('first');
-
         // CachePath Add
         $folder = new Folder($ngxcache['Nginxcacheclear']['cachedir'] . DS );
         $files = $folder->read(true, true, true);
-
         // Nginx Cache Directory Search
         if ($files[preg_match("\x[0-9A-Fa-f]{1,2}")]) {
-
-          　// Cache Clear
             foreach ($files[1] as $file) {
                 @unlink($file);
             }
-  	         $Folder = new Folder();
-          	foreach ($files[0] as $folder) {
-          	    $Folder->delete($folder);
-          	}
+  	    $Folder = new Folder();
+            foreach ($files[0] as $folder) {
+              $Folder->delete($folder);
+            }
             $this->setMessage('Nginxキャッシュを削除しました。');
         } else {
             $this->setMessage('削除するキャッシュがありません。');
