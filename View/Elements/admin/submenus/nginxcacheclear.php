@@ -12,6 +12,7 @@
   * @license      MIT lincense
   *
   */
+?>
   <tr>
     <th>管理メニュー</th>
     <td>
