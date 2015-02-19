@@ -7,7 +7,8 @@
   *
   * @copyright		Copyright 2015, Studio Necomaneki
   * @link			    http://blog.necomaneki.com/ Studio Necomaneki
-  * @since			  v 1.6.1
+  * @package		  NginxCacheClear.Model
+  * @since			  v 1.6.2
   * @license      MIT lincense
   *
   */
@@ -20,6 +21,7 @@ class Nginxcacheclear extends BcPluginAppModel {
   //Plugin DbConfig
   public $useDbConfig = 'plugin';
   //Plugin Validate
-  public $validate = array('cachedir'=>array('rule'=>'notEmpty','required'=>true));
+  public $validate = array( 'cachedir' => array( 'CacheRule1' => array('rule' => 'notEmpty' , 'required' => true) , 'CacheRule2' => array('rule' => '/^[a-z0-9-\/\.~_]{14,}$/i')));
 }
+
 ?>
