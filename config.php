@@ -13,7 +13,7 @@
   *
   */
 
-$title = 'NginxCacheClear';
+$title = 'Nginxキャッシュクリア';
 $description = 'nginx.conf ( proxy_cache_path ~ ) に記述されたディレクトリ内のキャッシュ削除。';
 $adminLink = array('plugin' => 'nginxcacheclear', 'controller' => 'nginxcacheclear', 'action' => 'index');
 $installMessage = 'NginxCacheClearをインストールしますか？';

@@ -29,6 +29,8 @@ class NginxcacheclearController extends BcPluginAppController {
   public function admin_index() {
     $cachedir = $this->Nginxcacheclear->find('all');
     $this->set('cachedir',$cachedir);
+    $this->pageTitle = 'キャッシュクリア管理画面';
+    $this->render('index');
   }
 
   public function admin_edit() {
@@ -44,6 +46,8 @@ class NginxcacheclearController extends BcPluginAppController {
       } else {
         $this->Session->setFlash('保存できませんでした。');
       }
+      $this->pageTitle = 'キャッシュディレクトリ変更及び、キャッシュ削除';
+      $this->render('index');
     }
   }
 
