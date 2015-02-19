@@ -49,9 +49,9 @@ class NginxcacheclearController extends BcPluginAppController {
 
     $this->setMessage('Nginxキャッシュを削除しました。');
     $this->redirect($this->referer());
-
-  }
 */
+  }
+  
   public function admin_edit() {
     if (!$this->data) {
       $this->data = $this->Nginxcacheclear->find('first');
