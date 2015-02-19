@@ -8,77 +8,101 @@
     * @copyright		Copyright 2015, Studio Necomaneki
     * @link			    http://blog.necomaneki.com/ Studio Necomaneki
     * @package			NginxCacheClear.Controller
-    * @since			  v 1.5.0
+    * @since			  v 1.6.0
     * @license      MIT lincense
     *
     */
-  App::import('Controller', 'Plugins');
-
+// Sanitize Utility
+App::uses('Sanitize','Utility');
+// Controller Plugin
+App::import('Controller', 'Plugins');
 /**
  * Nginx Cache Clear Controller.
  */
 class NginxcacheclearController extends BcPluginAppController {
 
 // Controller
-  public $name = 'Nginxcacheclear';
+    public $name = 'Nginxcacheclear';
 
 // Component
-  public $components = array('BcAuth', 'Cookie', 'BcAuthConfigure');
+    public $components = array('BcAuth', 'Cookie', 'BcAuthConfigure');
 
+// Parent
+    public function beforeFilter() {
+        parent::beforeFilter();
 
-// SubMenu
-  public function beforeFilter() {
-    parent::beforeFilter();
+        if (preg_match('/^admin_/', $this->action)) {
+            // Submenu
+            $this->subMenuElements = array('nginxcacheclear');
+        }
 
-    if (preg_match('/^admin_/', $this->action)) {
-      // ファイル名を指定して、サブメニューに設定する
-      $this->subMenuElements = array('nginxcacheclear');
     }
 
-  }
-
-// Admin Page Action
-  public function admin_index() {
-    $cachedir = $this->Nginxcacheclear->find('all');
-    $this->set('cachedir',$cachedir);
-    $this->pageTitle = 'キャッシュクリア管理画面';
-    $this->render('index');
-  }
-
-  public function admin_edit() {
-    if (!$this->data) {
-      $this->Nginxcacheclear->create();
-      $this->data = $this->Nginxcacheclear->find('first');
-    } else {
-      $this->Nginxcacheclear->set($this->data);
-      if ($this->Nginxcacheclear->id = 1) {
-	$this->Nginxcacheclear->save($this->data);
-        $this->Session->setFlash('保存しました。');
-        $this->redirect(array('plugin'=>'nginxcacheclear', 'controller'=>'nginxcacheclear', 'action'=>'index'));
-      } else {
-        $this->Session->setFlash('保存できませんでした。');
-      }
+// Admin index Page Action
+    public function admin_index() {
+        $cachedir = $this->Nginxcacheclear->find('all');
+        $this->set('cachedir',$cachedir);
+        $this->pageTitle = 'キャッシュクリア管理画面';
+        $this->render('index');
     }
-    $this->pageTitle = 'キャッシュディレクトリ変更及び、キャッシュ削除';
-    $this->render('edit');
-  }
 
-  public function admin_clear() {
-    App::import('Core', 'Folder');
-    $ngxcache = $this->Nginxcacheclear->find('first');
-    $folder = new Folder($ngxcache['Nginxcacheclear']['cachedir'] . DS );
-    $files = $folder->read(true, true, true);
-    foreach ($files[1] as $file) {
-      // Cache Delete
-      @unlink($file);
+// Admin edit page Action
+    public function admin_edit() {
+    // not database.
+        if (!$this->data) {
+            // Null
+            $this->Nginxcacheclear->create();
+            // Data Search
+            $this->data = $this->Nginxcacheclear->find('first');
+        } else {
+            // Add Data Set
+            $this->Nginxcacheclear->set($this->data);
+            // $id = 1 only update
+            if ($this->Nginxcacheclear->id = 1) {
+                // Sanitize
+                $this->data = Sanitize::clean($this->data, array('escape' => false));
+                // Add Data Save
+                $this->Nginxcacheclear->save($this->data);
+                $this->Session->setFlash('保存しました。');
+                $this->redirect(array('plugin'=>'nginxcacheclear', 'controller'=>'nginxcacheclear', 'action'=>'index'));
+            } else {
+              // Add Data Error
+              $this->Session->setFlash('保存できませんでした。');
+            }
+        $this->pageTitle = 'キャッシュディレクトリ変更及び、キャッシュ削除';
+        $this->render('edit');
+        }
+
     }
-    $Folder = new Folder();
-    foreach ($files[0] as $folder) {
-      $Folder->delete($folder);
+
+// Admin Nginx Cache Clear Action
+    public function admin_clear() {
+        App::import('Core', 'Folder');
+
+        // Model Search - CachePath
+        $ngxcache = $this->Nginxcacheclear->find('first');
+
+        // CachePath Add
+        $folder = new Folder($ngxcache['Nginxcacheclear']['cachedir'] . DS );
+        $files = $folder->read(true, true, true);
+
+        // Nginx Cache Directory Search
+        if ($files[preg_match("\x[0-9A-Fa-f]{1,2}")]) {
+
+          　// Cache Clear
+            foreach ($files[1] as $file) {
+                @unlink($file);
+            }
+  	         $Folder = new Folder();
+          	foreach ($files[0] as $folder) {
+          	    $Folder->delete($folder);
+          	}
+            $this->setMessage('Nginxキャッシュを削除しました。');
+        } else {
+            $this->setMessage('削除するキャッシュがありません。');
+        }
+        $this->redirect($this->referer());
     }
-    $this->setMessage('Nginxキャッシュを削除しました。');
-    $this->redirect($this->referer());
-  }
 
 }
 ?>
