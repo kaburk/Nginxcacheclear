@@ -8,7 +8,7 @@
   * @copyright		Copyright 2015, Studio Necomaneki
   * @link			    http://blog.necomaneki.com/ Studio Necomaneki
   * @package		  NginxCacheClear.InitDb
-  * @since			  v 1.6.2
+  * @since			  v 1.6.3
   * @license      MIT lincense
   *
   */

@@ -8,7 +8,7 @@
     * @copyright		Copyright 2015, Studio Necomaneki
     * @link			    http://blog.necomaneki.com/ Studio Necomaneki
     * @package			NginxCacheClear.Controller
-    * @since			  v 1.6.2
+    * @since			  v 1.6.3
     * @license      MIT lincense
     *
     */
@@ -75,10 +75,9 @@ class NginxcacheclearController extends BcPluginAppController {
               // Add Data Error
               $this->Session->setFlash('保存できませんでした。');
             }
+        }
         $this->pageTitle = 'キャッシュディレクトリ変更及び、キャッシュ削除';
         $this->render('edit');
-        }
-
     }
 
 // Admin Nginx Cache Clear Action
