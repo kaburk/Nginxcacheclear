@@ -21,7 +21,7 @@ class Nginxcacheclear extends BcPluginAppModel {
   //Plugin DbConfig
   public $useDbConfig = 'plugin';
   //public validate
-  public $validate = array('cachepath' => array('rule' => array('minLength', '6')), 'cachedir' => array('rule' => '/^[a-z0-9\._-]{3,}$/i'));
+  public $validate = array('cachepath' => array('rule' => array('minLength', '6')), 'cachedir' => array('rule' => '/^[a-z0-9_-]{3,}$/i'));
 }
 
 ?>
