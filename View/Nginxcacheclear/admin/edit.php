@@ -14,7 +14,7 @@
 ?>
 <?php echo $this->bcForm->create('Nginxcacheclear'); ?>
 <p>注1. nginx.conf ( proxy_cache_pass ~ ) に記述されているキャッシュディレクトリを指定して下さい。</p>
-<p>注2. 3文字以下、半角英数記号「 - _ . ~ 」以外の文字及び、空欄での登録は出来ません。</p>
+<p>注2. 3文字以下、半角英数記号「 - _ ~ 」以外の文字及び、空欄での登録は出来ません。</p>
 <p>※ もし項目追加の要望があれば、スタヂオねこまねき(Twitterアカウント):<a href="https://twitter.com/tama32525" title="ねこまねき＠タマ" target="_blank">@tama32525</a> までリプライして下さい。</p>
 <table>
   <tr>
