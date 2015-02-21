@@ -7,14 +7,14 @@
     *
     * @copyright		Copyright 2015, Studio Necomaneki
     * @link			    http://blog.necomaneki.com/ Studio Necomaneki
-    * @since			  v 1.6.4
+    * @since			  v 1.6.5
     * @license      MIT lincense
     *
     */
 ?>
-<?php if(!empty($cachedir)): ?>
+<?php if(!empty($cachepath) || !empty($cachedir)): ?>
 <div class="panel-box">
-  <h5>登録されているNginxのキャッシュディレクトリ: [ <?php echo $cachedir[0]['Nginxcacheclear']['cachedir']; ?> ]</h5>
+  <h5>登録されているNginxのキャッシュディレクトリ: [ <?php echo $cachepath[0]['Nginxcacheclear']['cachepath']; ?><?php echo $cachedir[0]['Nginxcacheclear']['cachedir']; ?> ]</h5>
   <ul>
     <li>
       <?php echo $this->bcBaser->link('Nginxキャッシュ削除', array('controller'=>'nginxcacheclear', 'action'=>'clear')); ?>
