@@ -1,14 +1,14 @@
 <?php
 /**
-  * Nginx Cache Clear Plugin.
+  * Nginxキャッシュクリアプラグイン.Model
   *
   * baserCMS :  Based Website Development Project <http://basercms.net>
   * Copyright   2008 - 2012, baserCMS Users Community <http://sites.google.com/site/baserusers/>
   *
   * @copyright		Copyright 2015, Studio Necomaneki
   * @link			    http://blog.necomaneki.com/ Studio Necomaneki
-  * @package		  NginxCacheClear.Model
-  * @since			  v 1.6.3
+  * @package		  Nginxcacheclear.Model
+  * @since			  v 1.6.4
   * @license      MIT lincense
   *
   */

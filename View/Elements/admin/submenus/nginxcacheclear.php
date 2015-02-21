@@ -1,13 +1,13 @@
 <?php
 /**
-  * Nginx Cache Clear Plugin.
+  * Nginxキャッシュクリアプラグイン.View
   *
   * baserCMS :  Based Website Development Project <http://basercms.net>
   * Copyright   2008 - 2012, baserCMS Users Community <http://sites.google.com/site/baserusers/>
   *
   * @copyright		Copyright 2015, Studio Necomaneki
   * @link			    http://blog.necomaneki.com/ Studio Necomaneki
-  * @since			  v 1.6.3
+  * @since			  v 1.6.4
   * @license      MIT lincense
   *
   */
@@ -17,10 +17,7 @@
     <td>
       <ul class="cleafix">
         <li>
-          <?php echo $this->bcBaser->link('キャッシュディレクトリ名の変更', array('controller'=>'nginxcacheclear', 'action'=>'edit')); ?>
-        </li>
-        <li>
-          <?php echo $this->bcBaser->link('Nginxキャッシュ削除', array('controller'=>'nginxcacheclear', 'action'=>'clear')); ?>
+          <?php echo $this->bcBaser->link('Nginxキャッシュディレクトリ更新管理', array('controller'=>'nginxcacheclear', 'action'=>'edit')); ?>
         </li>
       </ul>
     </td>

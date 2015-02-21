@@ -1,14 +1,14 @@
 <?php
   /**
-    * Nginx Cache Clear Plugin.
+    * Nginxキャッシュクリアプラグイン.Controller
     *
     * baserCMS :  Based Website Development Project <http://basercms.net>
     * Copyright   2008 - 2012, baserCMS Users Community <http://sites.google.com/site/baserusers/>
     *
     * @copyright		Copyright 2015, Studio Necomaneki
     * @link			    http://blog.necomaneki.com/ Studio Necomaneki
-    * @package			NginxCacheClear.Controller
-    * @since			  v 1.6.3
+    * @package			Nginxcacheclear.Controller
+    * @since			  v 1.6.4
     * @license      MIT lincense
     *
     */
@@ -50,7 +50,7 @@ class NginxcacheclearController extends BcPluginAppController {
     public function admin_index() {
         $cachedir = $this->Nginxcacheclear->find('all');
         $this->set('cachedir',$cachedir);
-        $this->pageTitle = 'キャッシュクリア管理画面';
+        $this->pageTitle = 'Nginxキャッシュクリア管理';
         $this->render('index');
     }
 
@@ -69,14 +69,14 @@ class NginxcacheclearController extends BcPluginAppController {
                 $this->data = Sanitize::clean($this->data, array('escape' => false));
                 // Add Data Save
                 $this->Nginxcacheclear->save($this->data);
-                $this->Session->setFlash('保存しました。');
-                $this->redirect(array('plugin'=>'nginxcacheclear', 'controller'=>'nginxcacheclear', 'action'=>'index'));
+                $this->Session->setFlash('ディレクトリを更新しました。');
             } else {
               // Add Data Error
-              $this->Session->setFlash('保存できませんでした。');
+                $this->Session->setFlash('ディレクトリの更新ができませんでした。');
             }
+            $this->redirect(array('plugin'=>'nginxcacheclear', 'controller'=>'nginxcacheclear', 'action'=>'index'));
         }
-        $this->pageTitle = 'キャッシュディレクトリ変更及び、キャッシュ削除';
+        $this->pageTitle = 'Nginxキャッシュディレクトリ更新管理';
         $this->render('edit');
     }
 
@@ -97,9 +97,9 @@ class NginxcacheclearController extends BcPluginAppController {
             foreach ($files[0] as $folder) {
               $Folder->delete($folder);
             }
-            $this->setMessage('Nginxキャッシュを削除しました。');
+            $this->setMessage('Nginxのキャッシュを削除しました。');
         } else {
-            $this->setMessage('削除するキャッシュがありません。');
+            $this->setMessage('削除するキャッシュがありませんでした。');
         }
         $this->redirect($this->referer());
     }
