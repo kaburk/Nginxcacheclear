@@ -1,135 +1,174 @@
 <?php
-  /**
-    * Nginxキャッシュクリアプラグイン.Controller
-    *
-    * baserCMS :  Based Website Development Project <http://basercms.net>
-    * Copyright   2008 - 2012, baserCMS Users Community <http://sites.google.com/site/baserusers/>
-    *
-    * @copyright		Copyright 2015, Studio Necomaneki
-    * @link			    http://blog.necomaneki.com/ Studio Necomaneki
-    * @package			Nginxcacheclear.Controller
-    * @since			  v 1.6.5
-    * @license      MIT lincense
-    *
-    */
-// Sanitize Utility
-App::uses('Sanitize','Utility');
-// Controller Plugin
-App::import('Controller', 'Plugins');
 /**
- * Nginx Cache Clear Controller.
- */
+  * Nginxキャッシュクリアプラグイン.Controller
+  *
+  * baserCMS :  Based Website Development Project <http://basercms.net>
+  * Copyright   2008 - 2012, baserCMS Users Community <http://forum.basercms.net>
+  *
+  * @copyright  Copyright 2015, Studio Necomaneki
+  * @link       http://blog.necomaneki.com/ Studio Necomaneki
+  * @package    Nginxcacheclear.Controller
+  * @since      v 1.6.6
+  * @license    MIT lincense
+  *
+  */
+// CakePHP ユーティリティ/サニタイズ
+App::uses('Sanitize','Utility');
+
+// CakePHP プラグイン/コントローラー
+App::import('Controller', 'Plugins');
+
+// Nginxキャッシュクリアプラグイン・コントローラー
 class NginxcacheclearController extends BcPluginAppController {
 
-// Controller
+// コントローラー名
     public $name = 'Nginxcacheclear';
 
-// Component
+// コンポーネント
     public $components = array('BcAuth', 'Cookie', 'BcAuthConfigure');
 
-// Parent
+/*** BeforeFilter ***/
+
     public function beforeFilter() {
         parent::beforeFilter();
-
+        // エレメンツ/管理メニュー
         if (preg_match('/^admin_/', $this->action)) {
-            // Submenu
+            // $uri が admin なら管理メニューを表示
             $this->subMenuElements = array('nginxcacheclear');
         }
-        // Model Search - CachePath
-        $defcachedir = $this->Nginxcacheclear->find('first');
-        // Data Null
-        if (!$defcachedir) {
+        // モデル/フィールド検索
+        $ngxcc_def_cachedir = $this->Nginxcacheclear->find('first');
+        // モデル/読み込み時・新規データ挿入
+        if (!$ngxcc_def_cachedir) {
+            // データベースを読み込み、空ならデフォルトデータをセットする
             $this->Nginxcacheclear->read(null, 1);
+            // ルートパスをセット
             $this->Nginxcacheclear->set('cachepath','/var/cache/');
+            // キャッシュフォルダをセット
             $this->Nginxcacheclear->set('cachedir', 'nginx');
+            // ルートパス及び、キャッシュフォルダを保存
             $this->Nginxcacheclear->save();
         }
-
     }
 
-// Admin index Page Action
+/*** /BeforeFilter ***/
+
+/*** ビュー, Nginxキャッシュクリア管理用アクション ***/
+
     public function admin_index() {
-        $cachepath = $this->Nginxcacheclear->find('all', array('fields' => 'cachepath'));
-        $cachedir = $this->Nginxcacheclear->find('all', array('fields' => 'cachedir'));
-        $this->set('cachepath',$cachepath);
-        $this->set('cachedir',$cachedir);
+        // データベースからルートパスを探す
+        $ngxcc_ad_index_path = $this->Nginxcacheclear->find('all');
+        // データベースからキャッシュディレクトリを探す
+        $ngxcc_ad_index_dir  = $this->Nginxcacheclear->find('all');
+        // ビュー用のルートパス変数をセット
+        $this->set('ngxcc_ad_index_path',$ngxcc_ad_index_path);
+        // ビュー用のキャッシュディレクトリ変数をセット
+        $this->set('ngxcc_ad_index_dir',$ngxcc_ad_index_dir);
+        // Nginxキャッシュクリア管理のページタイトル
         $this->pageTitle = 'Nginxキャッシュクリア管理';
+        // 利用するテンプレートは 'View/Nginxcacheclear/admin/index.php'
         $this->render('index');
     }
 
-// Admin edit page Action
+/*** /ビュー, Nginxキャッシュクリア管理用アクション ***/
+
+/*** ビュー, Nginxキャッシュクリア管理・更新用アクション ***/
+
     public function admin_edit() {
-        // not database.
+        // フォームへ更新データを表示する
         if (!$this->data) {
-            // Data Search
+            // 更新データをテーブルから見つける
             $this->data  = $this->Nginxcacheclear->find('first');
         } else {
-            // Add Data Set
+            // 新規更新データをセット
             $this->data  = $this->Nginxcacheclear->set($this->data);
-            // $id = 1 only update
+            // ID = 1 のみ更新する
             if ($this->Nginxcacheclear->id = 1) {
-                // Sanitize
+                // 入力されたデータをエスケープ処理
                 $this->data = Sanitize::clean($this->data, array('escape' => false, 'odd_spaces', 'encode', 'dollar', 'carriage', 'unicode', 'backslash'));
-                // Add Data Save
+                // 新規更新データをデータベースへ保存
                 $this->Nginxcacheclear->save($this->data);
+                // 新規更新データの保存が出来た場合に表示
                 $this->Session->setFlash('ディレクトリを更新しました。');
             } else {
-            // Add Data Error
-            $this->Session->setFlash('ディレクトリの更新ができませんでした。');
+                // データベース接続エラーなどで更新出来なかった場合に表示
+                $this->Session->setFlash('ディレクトリの更新ができませんでした。');
             }
-            $this->redirect(array('plugin'=>'nginxcacheclear', 'controller'=>'nginxcacheclear', 'action'=>'index'));
+        // Nginxキャッシュクリア管理にリダイレクト
+        $this->redirect(array('plugin'=>'nginxcacheclear', 'controller'=>'nginxcacheclear', 'action'=>'index'));
         }
-        $this->pageTitle = 'Nginxキャッシュディレクトリ更新管理';
-        $this->render('edit');
+    // Nginxキャッシュクリア管理のページタイトル
+    $this->pageTitle = 'Nginxキャッシュディレクトリ更新管理';
+    // 利用するテンプレートは 'View/Nginxcacheclear/admin/edit.php'
+    $this->render('edit');
     }
 
-// Admin Nginx Directory Check
+/*** /ビュー, Nginxキャッシュクリア管理・更新用アクション ***/
+
+/*** ビュー, Nginxキャッシュクリア管理・ディレクトリチェック用アクション ***/
+
     public function admin_check() {
-        // Model Search - CachePath
-        $ngxcccheck    = $this->Nginxcacheclear->find('first');
-        $ngxpathcheck  = $ngxcccheck['Nginxcacheclear']['cachepath'] . $ngxcccheck['Nginxcacheclear']['cachedir'];
-        if (file_exists($ngxpathcheck)) {
+        // Nginxキャッシュディレクトリのルートパスをデータベースから見つけ出す
+        $ngxcc_find_check = $this->Nginxcacheclear->find('first');
+        // Nginxキャッシュディレクトリのルートパスとキャッシュフォルダをセット
+        $ngxcc_path_check = $ngxcc_find_check['Nginxcacheclear']['cachepath'] . $ngxcc_find_check['Nginxcacheclear']['cachedir'];
+        // Nginxキャッシュディレクトリの有無を調べる
+        if (file_exists($ngxcc_path_check)) {
+            // Nginxキャッシュディレクトリが在る場合に以下を表示
             $this->setMessage('設定したディレクトリは存在します。');
         } else {
+            // Nginxキャッシュディレクトリの無い場合に以下を表示
             $this->setMessage('設定したディレクトリが存在しません。');
         }
-        $this->redirect(array('plugin'=>'nginxcacheclear', 'controller'=>'nginxcacheclear', 'action'=>'index'));
+    // Nginxキャッシュクリア管理にリダイレクト
+    $this->redirect(array('plugin'=>'nginxcacheclear', 'controller'=>'nginxcacheclear', 'action'=>'index'));
     }
 
-// Admin Nginx Cache Clear Action
+/*** /ビュー, Nginxキャッシュクリア管理・ディレクトリチェック用アクション ***/
+
+/*** ビュー, Nginxキャッシュクリア管理・キャッシュ削除用アクション ***/
+
     public function admin_clear() {
+        // CakePHP フォルダ/コア
         App::import('Core', 'Folder');
-
-        // Nginx Cache Directory
-        $ngxcache  = $this->Nginxcacheclear->find('first');
-        $ngxccpath = $ngxcache['Nginxcacheclear']['cachepath'];
-        $ngxccdir  = $ngxcache['Nginxcacheclear']['cachedir'];
-        $ngxcc     = $ngxccpath . $ngxccdir;
-
-
-        if (!file_exists($ngxcc)) {
-            // Check Directory
+        // Nginxキャッシュディレクトリをデータベースから見つける
+        $ngxcc_adcl_check   = $this->Nginxcacheclear->find('first');
+        // Nginxキャッシュディレクトリのルートパスを変数に代入
+        $ngxcc_adcl_path    = $ngxcc_adcl_check['Nginxcacheclear']['cachepath'];
+        // Nginxキャッシュディレクトリのキャッシュフォルダを変数に代入
+        $ngxcc_adcl_dir     = $ngxcc_adcl_check['Nginxcacheclear']['cachedir'];
+        // Nginxキャッシュディレクトリのルートパスとフォルダをセットする
+        $ngxcc_adcl_folder  = $ngxcc_adcl_path . $ngxcc_adcl_dir;
+        // Nginxキャッシュディレクトリが存在するかチェックする
+        if (!file_exists($ngxcc_adcl_folder)) {
+            // Nginxキャッシュディレクトリが無い場合は以下を表示
             $this->setMessage('設定したディレクトリが存在しません。');
         } else {
-             // CachePath Add
-            $folder = new Folder($ngxcc . DS);
-            $files = $folder->read(true, true, true);
-
-            // Nginx Cache Directory Search
-            if ($files[preg_match("\x[0-9A-Fa-f]{1,2}")]) {
-                foreach ($files[1] as $file) {
-                    @unlink($file);
+            // Nginxキャッシュディレクトリが有る場合はDSを付加する
+            $ngxcc_bcs_folder = new Folder($ngxcc_adcl_folder . DS);
+            // Nginxキャッシュディレクトリの中身を調べる
+            $ngxcc_bcs_files  = $ngxcc_bcs_folder->read(true, true, true);
+            // Nginxキャッシュディレクトリ内で16進数により作成されているディレクトリを正規表現で比較して探し出す
+            if ($ngxcc_bcs_files[preg_match("\x[0-9A-Fa-f]{1,2}")]) {
+                // Nginxキャッシュディレクトリ内のキャッシュクリア処理
+                foreach ($ngxcc_bcs_files[1] as $ngxcc_bcs_file) {
+                    @unlink($ngxcc_bcs_file);
                 }
-                $Folder = new Folder();
-                foreach ($files[0] as $folder) {
-                    $Folder->delete($folder);
+                $ngxcc_bcs_Folder = new Folder();
+                foreach ($ngxcc_bcs_files[0] as $ngxcc_bcs_folder) {
+                    $ngxcc_bcs_Folder->delete($ngxcc_bcs_folder);
                 }
+                // Nginxのキャッシュの削除が成功すると以下を表示
                 $this->setMessage('Nginxのキャッシュを削除しました。');
             } else {
+                // Nginxのキャッシュがディレクトリ内が空だと以下を表示
                 $this->setMessage('削除するキャッシュがありませんでした。');
             }
         }
-        $this->redirect(array('plugin'=>'nginxcacheclear', 'controller'=>'nginxcacheclear', 'action'=>'index'));
+    // Nginxキャッシュクリア管理にリダイレクト
+    $this->redirect(array('plugin'=>'nginxcacheclear', 'controller'=>'nginxcacheclear', 'action'=>'index'));
     }
+
+/*** ビュー, Nginxキャッシュクリア管理・キャッシュ削除用アクション ***/
 }
 ?>
