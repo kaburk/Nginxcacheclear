@@ -13,7 +13,7 @@
   */
 ?>
 <?php if(!empty($ngxcc_ad_index_path) || !empty($ngxcc_ad_index_dir)): ?>
-    <div class="panel-box">
+    <div class="panel-box corner10">
         <h5>登録されているNginxのキャッシュディレクトリ: [ <?php echo $ngxcc_ad_index_path[0]['Nginxcacheclear']['cachepath']; ?><?php echo $ngxcc_ad_index_dir[0]['Nginxcacheclear']['cachedir']; ?> ]</h5>
         <ul>
             <li>
