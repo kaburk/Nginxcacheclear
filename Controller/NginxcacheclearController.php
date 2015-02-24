@@ -95,7 +95,7 @@ class NginxcacheclearController extends BcPluginAppController {
                 $this->Session->setFlash('ディレクトリの更新ができませんでした。');
             }
         // Nginxキャッシュクリア管理にリダイレクト
-        $this->redirect(array('plugin'=>'nginxcacheclear', 'controller'=>'nginxcacheclear', 'action'=>'index'));
+        $this->redirect(array('plugin'=>'nginxcacheclear', 'controller'=>'nginxcacheclear', 'action'=>'edit'));
         }
     // Nginxキャッシュクリア管理のページタイトル
     $this->pageTitle = 'Nginxキャッシュディレクトリ更新管理';
@@ -121,7 +121,7 @@ class NginxcacheclearController extends BcPluginAppController {
             $this->setMessage('設定したディレクトリが存在しません。');
         }
     // Nginxキャッシュクリア管理にリダイレクト
-    $this->redirect(array('plugin'=>'nginxcacheclear', 'controller'=>'nginxcacheclear', 'action'=>'index'));
+    $this->redirect(array('plugin'=>'nginxcacheclear', 'controller'=>'nginxcacheclear', 'action'=>'edit'));
     }
 
 /*** /ビュー, Nginxキャッシュクリア管理・ディレクトリチェック用アクション ***/

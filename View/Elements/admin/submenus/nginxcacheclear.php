@@ -19,9 +19,6 @@
                 <li>
                     <?php echo $this->bcBaser->link('Nginxキャッシュディレクトリ更新管理', array('controller'=>'nginxcacheclear', 'action'=>'edit')); ?>
                 </li>
-                <li>
-                    <?php echo $this->bcBaser->link('Nginxキャッシュディレクトリチェック', array('controller'=>'nginxcacheclear', 'action'=>'check')); ?>
-                </li>
             </ul>
         </td>
     </tr>
