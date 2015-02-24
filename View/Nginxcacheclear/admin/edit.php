@@ -28,7 +28,7 @@
 <?php if(!empty($ngxcc_ad_index_path) || !empty($ngxcc_ad_index_dir)): ?>
         <table>
             <tr>
-                <th rowspan="2">
+                <th colspan="2">
                   登録されているNginxのキャッシュディレクトリ: [ <?php echo $ngxcc_ad_index_path[0]['Nginxcacheclear']['cachepath']; ?><?php echo $ngxcc_ad_index_dir[0]['Nginxcacheclear']['cachedir']; ?> ]
                 </th>
             </tr>
