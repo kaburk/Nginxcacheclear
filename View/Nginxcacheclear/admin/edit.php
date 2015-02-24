@@ -7,7 +7,7 @@
   *
   * @copyright  Copyright 2015, Studio Necomaneki
   * @link       http://blog.necomaneki.com/ Studio Necomaneki
-  * @since      v 1.6.6
+  * @since      v 1.6.7
   * @license    MIT lincense
   *
   */
@@ -21,6 +21,7 @@
         </ul>
         <ul class="panel-box corner5">
           <li><?php echo $this->bcBaser->link('Nginxキャッシュディレクトリの有無を調べる', array('controller'=>'nginxcacheclear', 'action'=>'check')); ?></li>
+          <li><?php echo $this->bcBaser->link('Nginxキャッシュ削除', array('controller'=>'nginxcacheclear', 'action'=>'clear')); ?></li>
         </ul>
     </div>
     <div class="panel-box corner10">

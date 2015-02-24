@@ -8,8 +8,8 @@
   * @copyright  Copyright 2015, Studio Necomaneki
   * @link       http://blog.necomaneki.com/ Studio Necomaneki
   * @package    Nginxcacheclear.Installer
-  * @since      v 1.6.6
+  * @since      v 1.6.7
   * @license    MIT lincense
   *
-  */    
+  */
 $this->Plugin->initDb('plugin', 'Nginxcacheclear');
