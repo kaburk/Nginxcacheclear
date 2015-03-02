@@ -17,9 +17,7 @@ Nginx専用・キャッシュクリアプラグイン。
 ### 確認済み動作環境 ###
 Nginx + Apache + mod_php :SSL環境で検証済み  
 Nginx + PHP-FPM :SSL環境で検証済み  
-
-baserCMS v3.0.6.1 〜
-
+baserCMS v3.0.6.1 〜  
 ※ baserCMS v3.0.7 での動作確認済み。
 
 ### 免責事項 ###
