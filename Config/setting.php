@@ -12,21 +12,6 @@
   * @license    MIT lincense
   *
   */
-  // Nginxキャッシュクリア・システムメニュー
-  $config['BcApp.adminNavi.nginxcacheclear'] = array(
-    'name' => 'Nginxキャッシュクリアプラグイン',
-    'contents' => array(
-      array(
-        'name' => 'Nginxキャッシュクリア管理',
-        'url' => array(
-          'admin' => true,
-          'plugin' => 'nginxcacheclear',
-          'controller' => 'nginxcacheclear',
-          'action' => 'index'
-        )
-      ),
-    )
-  );
   // Nginxキャッシュクリア更新管理・セレクトボックス・オプション
   $config = array(
     'Selectdir' => array(
