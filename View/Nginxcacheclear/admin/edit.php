@@ -7,7 +7,7 @@
   *
   * @copyright  Copyright 2015, Studio Necomaneki
   * @link       http://blog.necomaneki.com/ Studio Necomaneki
-  * @since      v 1.6.8
+  * @since      v 1.7.0
   * @license    MIT lincense
   *
   */
@@ -33,7 +33,7 @@
                 </th>
             </tr>
             <tr>
-                <td><?php echo $this->bcForm->input('Nginxcacheclear.cachepath' , array('options' => array('/var/cache/' => 'デフォルトディレクトリ: /var/cache/', '/var/www/' => 'Webディレクトリ: /var/www/', '/var/www/html/app/tmp/cache/' => 'baserCMSキャッシュディレクトリ: app/tmp/cache/'))); ?></td>
+                <td><?php echo $this->bcForm->input('Nginxcacheclear.cachepath' ,$ngxcc_ad_edit_selectbox); ?></td>
                 <td><?php echo $this->bcForm->text('Nginxcacheclear.cachedir'); ?></td>
             </tr>
         </table>

@@ -8,7 +8,7 @@
   * @copyright  Copyright 2015, Studio Necomaneki
   * @link       http://blog.necomaneki.com/ Studio Necomaneki
   * @package    Nginxcacheclear.Controller
-  * @since      v 1.6.8
+  * @since      v 1.7.0
   * @license    MIT lincense
   *
   */
@@ -108,7 +108,11 @@ class NginxcacheclearController extends BcPluginAppController {
         // Nginxキャッシュクリア管理にリダイレクト
         $this->redirect(array('plugin'=>'nginxcacheclear', 'controller'=>'nginxcacheclear', 'action'=>'edit'));
         }
-    // Nginxキャッシュクリア管理のページタイトル
+    // Nginxキャッシュクリア更新管理セレクトボックス・options
+    $ngxcc_ad_edit_selectbox = Configure::read('Selectdir.ngxccopt');
+    // Nginxキャッシュクリア更新管理セレクトボックス・View/edit.php options
+    $this->set('ngxcc_ad_edit_selectbox', $ngxcc_ad_edit_selectbox);
+    // Nginxキャッシュクリア更新管理のページタイトル
     $this->pageTitle = 'Nginxキャッシュディレクトリ更新管理';
     // 利用するテンプレートは 'View/Nginxcacheclear/admin/edit.php'
     $this->render('edit');
