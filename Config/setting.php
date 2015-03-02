@@ -8,7 +8,7 @@
   * @copyright  Copyright 2015, Studio Necomaneki
   * @link       http://blog.necomaneki.com/ Studio Necomaneki
   * @package    Nginxcacheclear.Setting
-  * @since      v 1.7.1
+  * @since      v 1.7.2
   * @license    MIT lincense
   *
   */
@@ -27,7 +27,7 @@
     )
   );
   // Nginxキャッシュクリア更新管理・セレクトボックス・オプション
-  $config['Selectdir.ngxccopt'] = array(
+  $config['Ngxcc_Selectdir.ngxcc_select_opt'] = array(
     'options' => array(
       '/var/cache/' => 'デフォルトディレクトリ: /var/cache/',
       '/var/www/' => 'Webディレクトリ: /var/www/',

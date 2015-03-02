@@ -7,7 +7,7 @@
   *
   * @copyright  Copyright 2015, Studio Necomaneki
   * @link       http://blog.necomaneki.com/ Studio Necomaneki
-  * @since      v 1.7.1
+  * @since      v 1.7.2
   * @license    MIT lincense
   *
   */
