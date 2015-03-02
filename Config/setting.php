@@ -8,20 +8,30 @@
   * @copyright  Copyright 2015, Studio Necomaneki
   * @link       http://blog.necomaneki.com/ Studio Necomaneki
   * @package    Nginxcacheclear.Setting
-  * @since      v 1.7.0
+  * @since      v 1.7.1
   * @license    MIT lincense
   *
   */
-  // Nginxキャッシュクリア更新管理・セレクトボックス・オプション
-  $config = array(
-    'Selectdir' => array(
-      'ngxccopt' => array(
-        'options' => array(
-          '/var/cache/' => 'デフォルトディレクトリ: /var/cache/',
-          '/var/www/' => 'Webディレクトリ: /var/www/',
-          '/var/www/html/app/tmp/cache/' => 'baserCMSキャッシュディレクトリ: app/tmp/cache/',
-          '/home/user/public_html/' => 'ホームユーザー：/home/user/public_html/'
+  // Nginxキャッシュクリア管理・システムメニュー
+  $config['BcApp.adminNavi.nginxcacheclear'] = array(
+    'name' => 'Nginxキャッシュクリアプラグイン',
+    'contents' => array(
+      array(
+        'name' => 'Nginxキャッシュクリア管理', 'url' => array(
+          'admin' => true,
+          'plugin' => 'nginxcacheclear',
+          'controller' => 'nginxcacheclear',
+          'action' => 'index'
         )
       )
+    )
+  );
+  // Nginxキャッシュクリア更新管理・セレクトボックス・オプション
+  $config['Selectdir.ngxccopt'] = array(
+    'options' => array(
+      '/var/cache/' => 'デフォルトディレクトリ: /var/cache/',
+      '/var/www/' => 'Webディレクトリ: /var/www/',
+      '/var/www/html/app/tmp/cache/' => 'baserCMSキャッシュディレクトリ: app/tmp/cache/',
+      '/home/user/public_html/' => 'ホームユーザー：/home/user/public_html/'
     )
   );
