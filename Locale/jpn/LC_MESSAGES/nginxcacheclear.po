@@ -97,8 +97,8 @@ msgid "Note: 1. Please specify the cache directory that is described in nginx.co
 msgstr "注1. nginx.conf ( proxy_cache_pass ~ ) に記述されているキャッシュディレクトリを指定して下さい。"
 
 # View/Nginxcacheclear/admin/edit.php:18;19
-msgid "Note 2.3 characters or less, alphanumeric symbol \"Hyphen\", \"Underscore\", \"Tilde\" other characters and can not be registered in the blank."
-msgstr "注2. 3文字以下、半角英数記号 \"ハイフン ( - )\", \"下線 ( _ ) \", \"チルダ ( ~ )\" 以外の文字及び、空欄での登録は出来ません。"
+msgid "Note 2.3 characters or less, alphanumeric symbol Hyphen, Underscore, Tilde other characters and can not be registered in the blank."
+msgstr "注2. 3文字以下、半角英数記号 ハイフン( - ), 下線( _ ), チルダ( ~ ) 以外の文字及び、空欄での登録は出来ません。"
 
 # View/Nginxcacheclear/admin/edit.php:19;20
 msgid "※ If there is additional demand item, Studio Necomaneki lead (Twitter account)"
