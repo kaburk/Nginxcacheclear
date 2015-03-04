@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Nginxcacheclear v.1.8.0\n"
+"Project-Id-Version: Nginxcacheclear v.1.8.1\n"
 "POT-Creation-Date: 2015-02-26 21:32+0900\n"
 "PO-Revision-Date: 2015-03-04 09:14+0900\n"
 "Last-Translator: hisanuco <hisax24@gmail.com>\n"
@@ -52,41 +52,65 @@ msgstr "baserCMSキャッシュディレクトリ: app/tmp/cache/"
 msgid "Home user: /home/user/public_html/"
 msgstr "ホームユーザー：/home/user/public_html/"
 
-# Controller/NginxcacheclearController.php:72;73
+# Controller/NginxcacheclearController.php:60;61
 msgid "Nginxcacheclear Admin Page."
 msgstr "Nginxキャッシュクリア管理"
 
-# Controller/NginxcacheclearController.php:87;88
+# Controller/NginxcacheclearController.php:72;73
+msgid "Link of the translation file exists."
+msgstr "翻訳ファイルのリンクは存在します。"
+
+# Controller/NginxcacheclearController.php:72;73
+msgid "I have removed the link."
+msgstr "リンクを削除しました。"
+
+# Controller/NginxcacheclearController.php:83;84
+msgid "Delete the link could not be."
+msgstr "リンクの削除が出来ませんでした。"
+
+# Controller/NginxcacheclearController.php:85;86
+msgid "Link does not exist."
+msgstr "リンクが存在しません。"
+
+# Controller/NginxcacheclearController.php:104;105
 msgid "I was updated directory."
 msgstr "ディレクトリを更新しました。"
 
-# Controller/NginxcacheclearController.php:89;90
+# Controller/NginxcacheclearController.php:106;107
 msgid "It was not possible to directory updates."
 msgstr "ディレクトリの更新が出来ませんでした。"
 
-# Controller/NginxcacheclearController.php:96;97
+# Controller/NginxcacheclearController.php:113;114
 msgid "Nginx Cache Directory Update Management"
 msgstr "Nginxキャッシュディレクトリ更新管理"
 
-# Controller/NginxcacheclearController.php:106;107
+# Controller/NginxcacheclearController.php:123;124
 msgid "Set the directory in which you reside."
 msgstr "設定したディレクトリは存在します。"
 
-# Controller/NginxcacheclearController.php:108;109
+# Controller/NginxcacheclearController.php:125;126
 msgid "The set directory does not exist."
 msgstr "設定したディレクトリが存在しません。"
 
-# Controller/NginxcacheclearController.php:133;134
+# Controller/NginxcacheclearController.php:150;151
 msgid "I have removed the cache of Nginx."
 msgstr "Nginxのキャッシュを削除しました。"
 
-# Controller/NginxcacheclearController.php:135;136
+# Controller/NginxcacheclearController.php:152;153
 msgid "Did not have a cache that you want to delete."
 msgstr "削除するキャッシュがありませんでした。"
 
 # View/Elements/admin/submenus/nginxcacheclear.php:16;17
 msgid "Management menu"
 msgstr "管理メニュー"
+
+# View/Elements/admin/submenus/nginxcacheclear.php:23;24
+msgid "Localizing into Japanese"
+msgstr "日本語化"
+
+# View/Elements/admin/submenus/nginxcacheclear.php:26;27
+msgid "Locale Delete"
+msgstr "ロケール削除"
 
 # View/Nginxcacheclear/admin/index.php:20;21
 msgid "Nginx cache Delete"

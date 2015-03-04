@@ -8,17 +8,18 @@
   * @copyright  Copyright 2015, Studio Necomaneki
   * @link       http://blog.necomaneki.com/ Studio Necomaneki
   * @package    Nginxcacheclear.Setting
-  * @since      v 1.8.0
+  * @since      v 1.8.1
   * @license    MIT lincense
   *
   */
-  //Configure::write( 'Config.language', 'en');
+  App::uses('L10n', 'I18n');
+  Configure::write( 'Config.language', 'ja');
   // Nginxキャッシュクリア管理・システムメニュー
   $config['BcApp.adminNavi.nginxcacheclear'] = array(
-    'name' => __d('nginxcacheclear', 'NginxCacheClear Plugins'),
+    'name' => __d('ngxcc_ja', 'NginxCacheClear Plugins'),
     'contents' => array(
       array(
-        'name' => __d('nginxcacheclear', 'NginxCacheClear Management'), 'url' => array(
+        'name' => __d('ngxcc_ja', 'NginxCacheClear Management'), 'url' => array(
           'admin' => true,
           'plugin' => 'nginxcacheclear',
           'controller' => 'nginxcacheclear',
@@ -30,9 +31,9 @@
   // Nginxキャッシュクリア更新管理・セレクトボックス・オプション
   $config['Ngxcc_Selectdir.ngxcc_select_opt'] = array(
     'options' => array(
-      '/var/cache/' => __d('nginxcacheclear', 'The default directory: /var/cache/'),
-      '/var/www/' => __d('nginxcacheclear', 'Web directory: /var/www/'),
-      '/var/www/html/app/tmp/cache/' => __d('nginxcacheclear', 'baserCMS cache directory: app/tmp/cache/'),
-      '/home/user/public_html/' => __d('nginxcacheclear', 'Home user: /home/user/public_html/')
+      '/var/cache/' => __d('ngxcc_ja', 'The default directory: /var/cache/'),
+      '/var/www/' => __d('ngxcc_ja', 'Web directory: /var/www/'),
+      '/var/www/html/app/tmp/cache/' => __d('ngxcc_ja', 'baserCMS cache directory: app/tmp/cache/'),
+      '/home/user/public_html/' => __d('ngxcc_ja', 'Home user: /home/user/public_html/')
     )
   );
