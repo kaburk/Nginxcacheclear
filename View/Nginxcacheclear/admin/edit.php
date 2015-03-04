@@ -15,7 +15,7 @@
     <div class="panel-box corner10">
         <ul>
             <li><?php echo __d('nginxcacheclear', 'Note: 1. Please specify the cache directory that is described in nginx.conf (proxy_cache_pass ~).'); ?></li>
-            <li><?php echo __d('nginxcacheclear', 'Note 2.3 characters or less, alphanumeric symbol "- _ ~" other characters and can not be registered in the blank.'); ?></li>
+            <li><?php echo __d('nginxcacheclear', 'Note 2.3 characters or less, alphanumeric symbol \"Hyphen\", \"Underscore\", \"Tilde\" other characters and can not be registered in the blank.'); ?></li>
             <li><?php echo __d('nginxcacheclear', '※ If there is additional demand item, Studio Necomaneki lead (Twitter account)'); ?>: <a href="https://twitter.com/tama32525" title="@tama32525" target="_blank">@tama32525</a> <?php echo __d('nginxcacheclear', 'Please reply to.'); ?></li>
         </ul>
         <div class="panel-box corner5 align-center">
