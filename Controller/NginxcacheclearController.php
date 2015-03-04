@@ -68,6 +68,7 @@ class NginxcacheclearController extends BcPluginAppController {
         $ngxcc_locale_path = BASER_LOCALES . 'jpn' . DS . 'LC_MESSAGES' . DS . $ngxcc_ngxcc_jpn;
         if (!file_exists($ngxcc_locale_path)) {
             symlink($ngxcc_locale_jpn, $ngxcc_locale_path);
+            $this->setMessage(__d('ngxcc_ja', 'I have enabled the Japanese.'));
         } else {
             $this->setMessage(__d('ngxcc_ja', 'Link of the translation file exists.'));
         }

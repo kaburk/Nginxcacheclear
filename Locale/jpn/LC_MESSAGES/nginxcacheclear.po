@@ -57,46 +57,50 @@ msgid "Nginxcacheclear Admin Page."
 msgstr "Nginxキャッシュクリア管理"
 
 # Controller/NginxcacheclearController.php:72;73
+msgid "I have enabled the Japanese."
+msgstr "日本語を有効にしました。"
+
+# Controller/NginxcacheclearController.php:73;74
 msgid "Link of the translation file exists."
 msgstr "翻訳ファイルのリンクは存在します。"
 
-# Controller/NginxcacheclearController.php:72;73
+# Controller/NginxcacheclearController.php:84;85
 msgid "I have removed the link."
 msgstr "リンクを削除しました。"
 
-# Controller/NginxcacheclearController.php:83;84
+# Controller/NginxcacheclearController.php:86;87
 msgid "Delete the link could not be."
 msgstr "リンクの削除が出来ませんでした。"
 
-# Controller/NginxcacheclearController.php:85;86
+# Controller/NginxcacheclearController.php:89;90
 msgid "Link does not exist."
 msgstr "リンクが存在しません。"
 
-# Controller/NginxcacheclearController.php:104;105
+# Controller/NginxcacheclearController.php:105;106
 msgid "I was updated directory."
 msgstr "ディレクトリを更新しました。"
 
-# Controller/NginxcacheclearController.php:106;107
+# Controller/NginxcacheclearController.php:107;108
 msgid "It was not possible to directory updates."
 msgstr "ディレクトリの更新が出来ませんでした。"
 
-# Controller/NginxcacheclearController.php:113;114
+# Controller/NginxcacheclearController.php:114;115
 msgid "Nginx Cache Directory Update Management"
 msgstr "Nginxキャッシュディレクトリ更新管理"
 
-# Controller/NginxcacheclearController.php:123;124
+# Controller/NginxcacheclearController.php:124;125
 msgid "Set the directory in which you reside."
 msgstr "設定したディレクトリは存在します。"
 
-# Controller/NginxcacheclearController.php:125;126
+# Controller/NginxcacheclearController.php:126;127
 msgid "The set directory does not exist."
 msgstr "設定したディレクトリが存在しません。"
 
-# Controller/NginxcacheclearController.php:150;151
+# Controller/NginxcacheclearController.php:151;152
 msgid "I have removed the cache of Nginx."
 msgstr "Nginxのキャッシュを削除しました。"
 
-# Controller/NginxcacheclearController.php:152;153
+# Controller/NginxcacheclearController.php:153;154
 msgid "Did not have a cache that you want to delete."
 msgstr "削除するキャッシュがありませんでした。"
 
