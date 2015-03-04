@@ -7,17 +7,17 @@
   *
   * @copyright  Copyright 2015, Studio Necomaneki
   * @link       http://blog.necomaneki.com/ Studio Necomaneki
-  * @since      v 1.7.2
+  * @since      v 1.8.0
   * @license    MIT lincense
   *
   */
 ?>
 <?php if(!empty($ngxcc_ad_index_path) || !empty($ngxcc_ad_index_dir)): ?>
     <div class="panel-box corner10">
-        <h5>登録されているNginxのキャッシュディレクトリ: [ <?php echo $ngxcc_ad_index_path[0]['Nginxcacheclear']['cachepath']; ?><?php echo $ngxcc_ad_index_dir[0]['Nginxcacheclear']['cachedir']; ?> ]</h5>
+        <h5><?php echo __d('nginxcacheclear', 'Cache directory of Nginx that are registered:'); ?> [ <?php echo $ngxcc_ad_index_path[0]['Nginxcacheclear']['cachepath']; ?><?php echo $ngxcc_ad_index_dir[0]['Nginxcacheclear']['cachedir']; ?> ]</h5>
         <ul>
             <li>
-              <?php echo $this->bcBaser->link('Nginxキャッシュ削除', array('controller'=>'nginxcacheclear', 'action'=>'clear')); ?>
+              <?php echo $this->bcBaser->link(__d('nginxcacheclear', 'Nginx cache Delete'), array('controller'=>'nginxcacheclear', 'action'=>'clear')); ?>
             </li>
         </ul>
     </div>

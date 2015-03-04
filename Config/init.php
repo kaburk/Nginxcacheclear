@@ -8,7 +8,7 @@
   * @copyright  Copyright 2015, Studio Necomaneki
   * @link       http://blog.necomaneki.com/ Studio Necomaneki
   * @package    Nginxcacheclear.Installer
-  * @since      v 1.7.2
+  * @since      v 1.8.0
   * @license    MIT lincense
   *
   */

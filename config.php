@@ -8,15 +8,15 @@
   * @copyright  Copyright 2015, Studio Necomaneki
   * @link       http://blog.necomaneki.com/ Studio Necomaneki
   * @package    Nginxcacheclear.Config
-  * @since      v 1.7.2
+  * @since      v 1.8.0
   * @license    MIT lincense
   *
   */
 
-$title = 'Nginxキャッシュクリア';
-$description = 'baserCMSのサーバキャッシュ削除とは別口で動作する、Nginx専用・キャッシュクリアプラグイン。<br />使い方は README.md をお読み下さい。';
+$title = __d('nginxcacheclear', 'NginxCacheClear');
+$description = __d('nginxcacheclear', 'To work with another item from the server cache deletion of baserCMS, Nginx dedicated Cache Clear Plugins. - Do detailed usage read the README.md.');
 $adminLink = array('plugin' => 'nginxcacheclear', 'controller' => 'nginxcacheclear', 'action' => 'index');
-$installMessage = 'Nginxキャッシュクリアプラグインをインストールしますか？';
+$installMessage = __d('nginxcacheclear', 'Nginx Are you sure that you want to install the Cache Clear Plugins?');
 $author = 'hisanuco';
 $url = 'http://blog.necomaneki.com/';
 

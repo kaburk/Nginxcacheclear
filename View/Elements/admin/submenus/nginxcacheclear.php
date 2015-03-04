@@ -7,17 +7,17 @@
   *
   * @copyright  Copyright 2015, Studio Necomaneki
   * @link       http://blog.necomaneki.com/ Studio Necomaneki
-  * @since      v 1.7.2
+  * @since      v 1.8.0
   * @license    MIT lincense
   *
   */
 ?>
     <tr>
-        <th>管理メニュー</th>
+        <th><?php echo __d('nginxcacheclear', 'Management menu'); ?></th>
         <td>
             <ul class="cleafix">
                 <li>
-                    <?php echo $this->bcBaser->link('Nginxキャッシュディレクトリ更新管理', array('controller'=>'nginxcacheclear', 'action'=>'edit')); ?>
+                    <?php echo $this->bcBaser->link(__d('nginxcacheclear', 'Nginx Cache Directory Update Management'), array('controller'=>'nginxcacheclear', 'action'=>'edit')); ?>
                 </li>
             </ul>
         </td>

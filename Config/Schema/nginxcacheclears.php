@@ -1,6 +1,6 @@
 <?php
 
-/* Nginxキャッシュクリアプラグイン.Schema Ver.1.7.2 */
+/* Nginxキャッシュクリアプラグイン.Schema Ver.1.8.0 */
 
 class NginxcacheclearsSchema extends CakeSchema {
 

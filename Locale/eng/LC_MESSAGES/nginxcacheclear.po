@@ -1,0 +1,129 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright StudioNecomaneki <hisax24@gmail.com>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginxcacheclear v.1.8.0\n"
+"POT-Creation-Date: 2015-02-26 21:32+0900\n"
+"PO-Revision-Date: 2015-03-04 09:39+0900\n"
+"Last-Translator: hisanuco <hisax24@gmail.com>\n"
+"Language-Team: StudioNecomaneki <hisax24@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.7.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Language: en_US\n"
+
+# config.php:16;17
+msgid "NginxCacheClear"
+msgstr ""
+
+# config.php:17;18
+msgid ""
+"To work with another item from the server cache deletion of baserCMS, Nginx "
+"dedicated Cache Clear Plugins. - Do detailed usage read the README.md."
+msgstr ""
+
+# config.php:19;20
+msgid "Nginx Are you sure that you want to install the Cache Clear Plugins?"
+msgstr ""
+
+# Config/setting.php:17;18
+msgid "NginxCacheClear Plugins"
+msgstr ""
+
+# Config/setting.php:20;21
+msgid "NginxCacheClear Management"
+msgstr ""
+
+# Config/setting.php:32;33
+msgid "The default directory: /var/cache/"
+msgstr ""
+
+# Config/setting.php:33;34
+msgid "Web directory: /var/www/"
+msgstr ""
+
+# Config/setting.php:34;35
+msgid "baserCMS cache directory: app/tmp/cache/"
+msgstr ""
+
+# Config/setting.php:35;36
+msgid "Home user: /home/user/public_html/"
+msgstr ""
+
+# Controller/NginxcacheclearController.php:72;73
+msgid "Nginxcacheclear Admin Page."
+msgstr ""
+
+# Controller/NginxcacheclearController.php:87;88
+msgid "I was updated directory."
+msgstr ""
+
+# Controller/NginxcacheclearController.php:89;90
+msgid "It was not possible to directory updates."
+msgstr ""
+
+# Controller/NginxcacheclearController.php:96;97
+msgid "Nginx Cache Directory Update Management"
+msgstr ""
+
+# Controller/NginxcacheclearController.php:106;107
+msgid "Set the directory in which you reside."
+msgstr ""
+
+# Controller/NginxcacheclearController.php:108;109
+msgid "The set directory does not exist."
+msgstr ""
+
+# Controller/NginxcacheclearController.php:133;134
+msgid "I have removed the cache of Nginx."
+msgstr ""
+
+# Controller/NginxcacheclearController.php:135;136
+msgid "Did not have a cache that you want to delete."
+msgstr ""
+
+# View/Elements/admin/submenus/nginxcacheclear.php:16;17
+msgid "Management menu"
+msgstr ""
+
+# View/Nginxcacheclear/admin/index.php:20;21
+msgid "Nginx cache Delete"
+msgstr ""
+
+# View/Nginxcacheclear/admin/edit.php:17;18
+msgid ""
+"Note: 1. Please specify the cache directory that is described in nginx.conf "
+"(proxy_cache_pass ~)."
+msgstr ""
+
+# View/Nginxcacheclear/admin/edit.php:18;19
+msgid ""
+"Note 2.3 characters or less, alphanumeric symbol \"Hyphen\", \"Underscore\", "
+"\"Tilde\" other characters and can not be registered in the blank."
+msgstr ""
+
+# View/Nginxcacheclear/admin/edit.php:19;20
+msgid ""
+"※ If there is additional demand item, Studio Necomaneki lead (Twitter "
+"account)"
+msgstr ""
+
+# View/Nginxcacheclear/admin/edit.php:19;20
+msgid "Please reply to."
+msgstr ""
+
+# View/Nginxcacheclear/admin/edit.php:22;23
+msgid "Nginx I return to the cache clear management"
+msgstr ""
+
+# View/Nginxcacheclear/admin/edit.php:23;24
+msgid "I check for Nginx cache directory"
+msgstr ""
+
+# View/Nginxcacheclear/admin/edit.php:42;43
+msgid "Update"
+msgstr ""

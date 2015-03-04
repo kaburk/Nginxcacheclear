@@ -7,20 +7,20 @@
   *
   * @copyright  Copyright 2015, Studio Necomaneki
   * @link       http://blog.necomaneki.com/ Studio Necomaneki
-  * @since      v 1.7.2
+  * @since      v 1.8.0
   * @license    MIT lincense
   *
   */
 ?>
     <div class="panel-box corner10">
         <ul>
-            <li>注1. nginx.conf ( proxy_cache_pass ~ ) に記述されているキャッシュディレクトリを指定して下さい。</li>
-            <li>注2. 3文字以下、半角英数記号「 - _ ~ 」以外の文字及び、空欄での登録は出来ません。</li>
-            <li>※ もし項目追加の要望があれば、スタヂオねこまねき(Twitterアカウント): <a href="https://twitter.com/tama32525" title="ねこまねき＠タマ" target="_blank">@tama32525</a> までリプライして下さい。</li>
+            <li><?php echo __d('nginxcacheclear', 'Note: 1. Please specify the cache directory that is described in nginx.conf (proxy_cache_pass ~).'); ?></li>
+            <li><?php echo __d('nginxcacheclear', 'Note 2.3 characters or less, alphanumeric symbol "- _ ~" other characters and can not be registered in the blank.'); ?></li>
+            <li><?php echo __d('nginxcacheclear', '※ If there is additional demand item, Studio Necomaneki lead (Twitter account)'); ?>: <a href="https://twitter.com/tama32525" title="@tama32525" target="_blank">@tama32525</a> <?php echo __d('nginxcacheclear', 'Please reply to.'); ?></li>
         </ul>
         <div class="panel-box corner5 align-center">
-            <?php echo $this->bcBaser->link('Nginxキャッシュクリア管理に戻る', array('controller'=>'nginxcacheclear', 'action'=>'index')); ?> |
-            <?php echo $this->bcBaser->link('Nginxキャッシュディレクトリの有無を調べる', array('controller'=>'nginxcacheclear', 'action'=>'check')); ?>
+            <?php echo $this->bcBaser->link(__d('nginxcacheclear', 'Nginx I return to the cache clear management'), array('controller'=>'nginxcacheclear', 'action'=>'index')); ?> |
+            <?php echo $this->bcBaser->link(__d('nginxcacheclear', 'I check for Nginx cache directory'), array('controller'=>'nginxcacheclear', 'action'=>'check')); ?>
         </div>
     </div>
 <?php echo $this->bcForm->create('Nginxcacheclear'); ?>
@@ -29,7 +29,7 @@
         <table>
             <tr>
                 <th colspan="2">
-                  登録されているNginxのキャッシュディレクトリ: [ <?php echo $ngxcc_ad_index_path[0]['Nginxcacheclear']['cachepath']; ?><?php echo $ngxcc_ad_index_dir[0]['Nginxcacheclear']['cachedir']; ?> ]
+                  <?php echo __d('nginxcacheclear', 'Cache directory of Nginx that are registered:'); ?> [ <?php echo $ngxcc_ad_index_path[0]['Nginxcacheclear']['cachepath']; ?><?php echo $ngxcc_ad_index_dir[0]['Nginxcacheclear']['cachedir']; ?> ]
                 </th>
             </tr>
             <tr>
@@ -39,7 +39,7 @@
         </table>
 <?php endif; ?>
         <div class="submit">
-            <?php echo $this->bcForm->submit('更新',array('class'=>'button')); ?>
+            <?php echo $this->bcForm->submit(__d('nginxcacheclear', 'Update'),array('class'=>'button')); ?>
         </div>
     </div>
 <?php echo $this->bcForm->end(); ?>
